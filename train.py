@@ -32,12 +32,12 @@ train_datagen = ImageDataGenerator(
         horizontal_flip=True)
 test_datagen = ImageDataGenerator(rescale=1./255)
 train_generator = train_datagen.flow_from_directory(
-        'dogs-vs-cats/',
+        'data/',
         target_size=(64, 64),
         batch_size=32,
         class_mode='binary')
 validation_generator = test_datagen.flow_from_directory(
-        'dogs-vs-cats/',
+        'data/',
         target_size=(64, 64),
         batch_size=32,
         class_mode='binary')
