@@ -1,3 +1,4 @@
+import sys
 dataset_path = sys.argv[1]
 from keras.models import Sequential
 model = Sequential()
