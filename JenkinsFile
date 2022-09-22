@@ -1,14 +1,15 @@
 pipeline {
   agent any
   /*environment {
-    AZURE_SUBSCRIPTION_ID='99999999-9999-9999-9999-999999999999'
-    AZURE_TENANT_ID='99999999-9999-9999-9999-999999999999'
-    AZURE_STORAGE_ACCOUNT='myStorageAccount'
+    AZURE_SUBSCRIPTION_ID='ee15f056-487e-42cf-9a04-8c2395e22ba0'
+    AZURE_TENANT_ID='2f5ffdec-5bd1-4cd6-8044-d88fdfb009e4'
+    AZURE_STORAGE_ACCOUNT='dhruvikastorageaccount1'
   }*/
   stages {
     stage('Build') {
       steps {
-          /*withCredentials([usernamePassword(credentialsId: 'azuresp', 
+          withCredentials(
+                        [usernamePassword(credentialsId: 'azure_storage_jenkins', 
                         passwordVariable: 'AZURE_CLIENT_SECRET', 
                         usernameVariable: 'AZURE_CLIENT_ID')]) {
           sh '''
