@@ -18,6 +18,7 @@ pipeline {
             # Set default subscription
             az account set --subscription $AZURE_SUBSCRIPTION_ID
             # Execute download to Azure
+            pwd
             az storage blob download-batch -d . --pattern *.jpg -s my-container-1 --account-name $AZURE_STORAGE_ACCOUNT --auth-mode login
             # Logout from Azure
             az logout
