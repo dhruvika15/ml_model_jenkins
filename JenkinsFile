@@ -1,0 +1,18 @@
+pipeline {
+  agent any
+  stages {
+    stage('Build') {
+      steps {
+          sh '''
+            echo HI
+            sudo cp -r * /ml_jenkins
+            cd /ml_jenkins
+            sudo docker build -t ml_model:v1 .
+            sudo docker rm c1
+            sudo docker run --name c1 ml_model:v1
+            sudo docker cp c1:/dogcat.h5 /ml_jenkins
+          '''   
+        }
+      }
+    }
+  }
