@@ -18,4 +18,5 @@ RUN mkdir /data
 COPY train.py /
 COPY data /data
 
-CMD ["python3" ,"train.py", "data/"]
+ENTRYPOINT ["python3" ,"train.py"]
+CMD ["data/"]
