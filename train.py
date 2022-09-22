@@ -1,3 +1,4 @@
+dataset_path = sys.argv[1]
 from keras.models import Sequential
 model = Sequential()
 from keras.layers import Convolution2D
@@ -32,12 +33,12 @@ train_datagen = ImageDataGenerator(
         horizontal_flip=True)
 test_datagen = ImageDataGenerator(rescale=1./255)
 train_generator = train_datagen.flow_from_directory(
-        'data/',
+        'dataset_path',
         target_size=(64, 64),
         batch_size=32,
         class_mode='binary')
 validation_generator = test_datagen.flow_from_directory(
-        'data/',
+        'dataset_path',
         target_size=(64, 64),
         batch_size=32,
         class_mode='binary')
