@@ -11,7 +11,7 @@ pipeline {
           withCredentials(
                         [usernamePassword(credentialsId: 'azure_storage_jenkins', 
                         passwordVariable: 'AZURE_CLIENT_SECRET', 
-                        usernameVariable: 'AZURE_CLIENT_ID')]) 
+                        usernameVariable: 'AZURE_CLIENT_ID')]) {
           sh '''
             # Login to Azure with ServicePrincipal
             az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
@@ -30,7 +30,7 @@ pipeline {
             sudo docker rm c1
             sudo docker run --name c1 ml_model:v1
             sudo docker cp c1:/dogcat.h5 /ml_jenkins
-          '''   
+          '''   }
         }
       }
     }
