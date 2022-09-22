@@ -19,7 +19,7 @@ pipeline {
             az account set --subscription $AZURE_SUBSCRIPTION_ID
             # Execute download to Azure
             sudo chown jenkins /ml_jenkins/data/test1/test1
-            az storage blob download-batch -d /ml_jenkins/data/test1/test1 --pattern *.jpg -s my-container-1 --account-name $AZURE_STORAGE_ACCOUNT --auth-mode login
+            az storage blob download-batch -d /ml_jenkins/data/test1/test1 --pattern * -s my-container-1 --account-name $AZURE_STORAGE_ACCOUNT --auth-mode login
             # Logout from Azure
             az logout
           '''
