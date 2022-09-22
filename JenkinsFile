@@ -18,7 +18,7 @@ pipeline {
             # Set default subscription
             az account set --subscription $AZURE_SUBSCRIPTION_ID
             # Execute download to Azure
-            azcopy copy 'https://dhruvikastorageaccount1.blob.core.windows.net/my-container-2/' '/ml_jenkins'  --recursive
+            az storage blob download-batch -d . --pattern *.jpg -s my-container-1 --account-name $AZURE_STORAGE_ACCOUNT 
             # Logout from Azure
             az logout
           '''
