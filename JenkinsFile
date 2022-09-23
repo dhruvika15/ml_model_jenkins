@@ -23,7 +23,7 @@ pipeline {
               --account-name $AZURE_STORAGE_ACCOUNT \
               --container-name my-container-1 \
               --name 1.jpg \
-              --file /ml_jenkins/data/test1/test1 \
+              --file /ml_jenkins/data/test1/test1/1.jpg \
               --auth-mode login
             #sudo azcopy copy 'https://mystorageaccount.blob.core.windows.net/my-container-1/*' '/ml_jenkins/data/test1/test1' 
             #az storage blob download-batch -d /ml_jenkins/data/test1/test1/ --pattern *.jpg -s my-container-1 --account-name $AZURE_STORAGE_ACCOUNT --auth-mode login
